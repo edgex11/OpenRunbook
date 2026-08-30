@@ -51,6 +51,8 @@ code 137* · or `preflight terraform destroy` for a command's blast radius.
 
 ## What it looks like
 
+![The chat answering "my pods keep restarting" with a triage sequence, causes and fixes](docs/screenshot.png)
+
 The chat UI is Gradio's `ChatInterface`, so the app contains no frontend code —
 `app.py` is 130 lines and almost all of it turns a graph walk into Markdown.
 
