@@ -5,9 +5,10 @@ restarting"* and get the triage commands in order, what to look for in each
 one's output, the causes with their fixes, and the practice that stops it
 recurring — assembled by walking the graph, with **no language model involved**.
 
-Runs on **Neo4j** (open source) or on **Axon**. Same code, same Cypher, same
-data. Preloaded with a real knowledge graph of AWS, Kubernetes and Terraform
-operations.
+Runs on **Neo4j** (open source) or on **[Axon](https://edgex11.com/blog/why-we-built-our-own-graph-database.html)** — EdgeX11's graph database
+in Go, a single binary speaking Cypher and Bolt. Same code, same Cypher, same
+data on either. Preloaded with a real knowledge graph of AWS, Kubernetes and
+Terraform operations.
 
 ```
 512 nodes · 917 edges · 140 classes
@@ -31,6 +32,8 @@ GRAPH_BACKEND=neo4j python3 app.py               # http://127.0.0.1:7860
 ```
 
 ### Axon
+
+[What Axon is and why it exists](https://edgex11.com/blog/why-we-built-our-own-graph-database.html), with its own benchmarks against Neo4j.
 
 ```bash
 axon serve --data ./devops-data --listen :7480 --bolt :7690
@@ -154,5 +157,5 @@ MIT — see [LICENSE](LICENSE).
 
 This repository is the application and the knowledge graph, both MIT. The two
 databases it runs against are not part of it and carry their own terms: Neo4j
-is available under GPLv3 (Community Edition), and Axon is proprietary software
-of EdgeX11.
+is available under GPLv3 (Community Edition), and [Axon](https://edgex11.com/blog/why-we-built-our-own-graph-database.html) is proprietary
+software of EdgeX11.
