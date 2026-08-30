@@ -51,7 +51,12 @@ code 137* · or `preflight terraform destroy` for a command's blast radius.
 
 ## What it looks like
 
-![The chat answering "my pods keep restarting" with a triage sequence, causes and fixes](docs/screenshot.png)
+![The chat answering "nodes drop packets when traffic spikes" with ConntrackTableFull: a numbered triage sequence, each command annotated with the signal to look for in its output](docs/screenshot.png)
+
+That question shares no words with the answer — "nodes drop packets" reaches
+`ConntrackTableFull` semantically, and the triage sequence, the risk tier on
+each command and the "look at *Allocated resources*" lines are all edges in the
+graph rather than generated prose.
 
 The chat UI is Gradio's `ChatInterface`, so the app contains no frontend code —
 `app.py` is 130 lines and almost all of it turns a graph walk into Markdown.
