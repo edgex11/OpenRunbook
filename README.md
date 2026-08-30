@@ -147,3 +147,12 @@ Curated operational knowledge, cross-checked against upstream Kubernetes, AWS
 EKS and HashiCorp documentation, carrying a `verified_on` date. A starting
 point for your own environment, not gospel: your cluster has its own gotchas,
 and those are the ones worth adding.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+This repository is the application and the knowledge graph, both MIT. The two
+databases it runs against are not part of it and carry their own terms: Neo4j
+is available under GPLv3 (Community Edition), and Axon is proprietary software
+of EdgeX11.
