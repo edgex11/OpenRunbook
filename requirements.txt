@@ -1,0 +1,11 @@
+# The app talks to Neo4j and to Axon through the same official driver.
+neo4j>=5.0
+
+# Chat UI. Supplies the window, history and examples so the app does not
+# have to; everything in app.py is about formatting a graph walk.
+gradio>=5.0
+
+# Optional: semantic search. Static embeddings — numpy-only inference, no
+# torch, no network at query time, nothing leaves the machine. Without it the
+# app falls back to keyword search (measurably worse; see eval.py).
+model2vec>=0.9

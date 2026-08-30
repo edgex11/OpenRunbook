@@ -1,0 +1,1004 @@
+{
+ "_comment": "The class hierarchy. Axon loads this into its ontology and infers over it at query time. Neo4j has no such concept, so the loader materialises the closure onto every node instead - which is the honest cost of portability, and why this file is shared rather than duplicated per backend.",
+ "classes": {
+  "ACMCertificate": {
+   "description": "TLS certificate",
+   "parents": [
+    "AWSSecurity"
+   ]
+  },
+  "AWSCLICommand": {
+   "description": "aws",
+   "parents": [
+    "Command"
+   ]
+  },
+  "AWSCompute": {
+   "description": "AWS compute capacity",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSContainer": {
+   "description": "AWS container platform services",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSData": {
+   "description": "AWS managed data stores",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSIdentity": {
+   "description": "AWS identity and access management",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSNetwork": {
+   "description": "AWS networking",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSObservability": {
+   "description": "AWS monitoring, logging and tracing",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSResource": {
+   "description": "An AWS-managed resource",
+   "parents": [
+    "CloudResource"
+   ]
+  },
+  "AWSSecurity": {
+   "description": "AWS encryption, secrets and certificates",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "AWSStorage": {
+   "description": "AWS storage",
+   "parents": [
+    "AWSResource"
+   ]
+  },
+  "ApplicationLoadBalancer": {
+   "description": "Layer 7 load balancer",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "AutoScalingGroup": {
+   "description": "Maintains a desired count of EC2 instances",
+   "parents": [
+    "AWSCompute"
+   ]
+  },
+  "CNIPlugin": {
+   "description": "Assigns pod addresses and wires pod networking",
+   "parents": [
+    "NetworkConcept"
+   ]
+  },
+  "CloudResource": {
+   "description": "A resource owned by a cloud provider",
+   "parents": [
+    "Resource"
+   ]
+  },
+  "CloudWatchAlarm": {
+   "description": "Threshold alarm on a metric",
+   "parents": [
+    "AWSObservability"
+   ]
+  },
+  "CloudWatchLogGroup": {
+   "description": "Log destination",
+   "parents": [
+    "AWSObservability"
+   ]
+  },
+  "ClusterRole": {
+   "description": "Cluster-wide permission set",
+   "parents": [
+    "K8sRBAC"
+   ]
+  },
+  "ClusterRoleBinding": {
+   "description": "Grants a ClusterRole cluster-wide",
+   "parents": [
+    "K8sRBAC"
+   ]
+  },
+  "Command": {
+   "description": "A CLI invocation",
+   "parents": [
+    "Operation"
+   ]
+  },
+  "Concept": {
+   "description": "An abstraction with no direct API object",
+   "parents": [
+    "Thing"
+   ]
+  },
+  "Condition": {
+   "description": "A named state reported by the platform",
+   "parents": [
+    "Diagnostic"
+   ]
+  },
+  "ConfigMap": {
+   "description": "Non-secret configuration data",
+   "parents": [
+    "K8sConfig"
+   ]
+  },
+  "Connectivity": {
+   "description": "How two networks reach each other",
+   "parents": [
+    "NetworkConcept"
+   ]
+  },
+  "ConntrackTable": {
+   "description": "",
+   "parents": [
+    "KernelLimit"
+   ]
+  },
+  "CoreDNS": {
+   "description": "",
+   "parents": [
+    "DNSComponent"
+   ]
+  },
+  "CostPractice": {
+   "description": "Reduces spend",
+   "parents": [
+    "Practice"
+   ]
+  },
+  "CronJob": {
+   "description": "Creates Jobs on a schedule",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "CustomNetworking": {
+   "description": "",
+   "parents": [
+    "CNIPlugin"
+   ]
+  },
+  "CustomResourceDefinition": {
+   "description": "Adds a new API kind",
+   "parents": [
+    "K8sExtension"
+   ]
+  },
+  "DNSComponent": {
+   "description": "Cluster name resolution",
+   "parents": [
+    "NetworkConcept"
+   ]
+  },
+  "DaemonSet": {
+   "description": "One pod per (matching) node",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "DataPlaneMode": {
+   "description": "How Service virtual IPs are implemented on a node",
+   "parents": [
+    "NetworkConcept"
+   ]
+  },
+  "DeployedInstance": {
+   "description": "A concrete deployed object in the reference architecture",
+   "parents": [
+    "Concept"
+   ]
+  },
+  "Deployment": {
+   "description": "Declarative rolling updates for stateless pods",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "Diagnostic": {
+   "description": "Knowledge used to detect, explain and fix failures",
+   "parents": [
+    "Thing"
+   ]
+  },
+  "DynamoDBTable": {
+   "description": "Managed key-value store",
+   "parents": [
+    "AWSData"
+   ]
+  },
+  "EBSVolume": {
+   "description": "Block storage attached to one AZ",
+   "parents": [
+    "AWSStorage"
+   ]
+  },
+  "EC2Instance": {
+   "description": "A virtual machine",
+   "parents": [
+    "AWSCompute"
+   ]
+  },
+  "ECRRepository": {
+   "description": "Container image registry",
+   "parents": [
+    "AWSContainer"
+   ]
+  },
+  "EFSFileSystem": {
+   "description": "Multi-AZ NFS file storage",
+   "parents": [
+    "AWSStorage"
+   ]
+  },
+  "EKSCluster": {
+   "description": "Managed Kubernetes control plane",
+   "parents": [
+    "AWSContainer"
+   ]
+  },
+  "EKSFargateProfile": {
+   "description": "Serverless pod placement in EKS",
+   "parents": [
+    "AWSContainer"
+   ]
+  },
+  "EKSNodegroup": {
+   "description": "Managed group of worker nodes",
+   "parents": [
+    "AWSContainer"
+   ]
+  },
+  "EksctlCommand": {
+   "description": "eksctl",
+   "parents": [
+    "Command"
+   ]
+  },
+  "ElastiCacheCluster": {
+   "description": "Managed Redis or Memcached",
+   "parents": [
+    "AWSData"
+   ]
+  },
+  "EndpointSlice": {
+   "description": "The actual backend addresses behind a Service",
+   "parents": [
+    "K8sNetworking"
+   ]
+  },
+  "Evidence": {
+   "description": "A specific signal a command reveals",
+   "parents": [
+    "Diagnostic"
+   ]
+  },
+  "HelmCommand": {
+   "description": "helm",
+   "parents": [
+    "Command"
+   ]
+  },
+  "HelmRelease": {
+   "description": "A named, versioned installation of a chart",
+   "parents": [
+    "Resource"
+   ]
+  },
+  "HorizontalPodAutoscaler": {
+   "description": "Scales replicas on metrics",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "IAMPolicy": {
+   "description": "A permission document",
+   "parents": [
+    "AWSIdentity"
+   ]
+  },
+  "IAMRole": {
+   "description": "Assumable set of permissions",
+   "parents": [
+    "AWSIdentity"
+   ]
+  },
+  "IPVSMode": {
+   "description": "",
+   "parents": [
+    "DataPlaneMode"
+   ]
+  },
+  "IaCResource": {
+   "description": "Infrastructure declared as code",
+   "parents": [
+    "Resource"
+   ]
+  },
+  "Ingress": {
+   "description": "HTTP routing into the cluster",
+   "parents": [
+    "K8sNetworking"
+   ]
+  },
+  "IngressClass": {
+   "description": "Selects which controller implements an Ingress",
+   "parents": [
+    "K8sNetworking"
+   ]
+  },
+  "InternetGateway": {
+   "description": "Public internet attachment for a VPC",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "IptablesMode": {
+   "description": "",
+   "parents": [
+    "DataPlaneMode"
+   ]
+  },
+  "Job": {
+   "description": "Runs pods to completion",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "K8sCluster": {
+   "description": "Cluster-level objects",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sConfig": {
+   "description": "Supplies configuration to workloads",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sExtension": {
+   "description": "Extends the API server",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sNetworking": {
+   "description": "Connects and exposes workloads",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sRBAC": {
+   "description": "Controls who may do what",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sSecret": {
+   "description": "Base64-encoded secret data, encrypted at rest only if configured",
+   "parents": [
+    "K8sConfig"
+   ]
+  },
+  "K8sStorage": {
+   "description": "Provides persistence to workloads",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "K8sWorkload": {
+   "description": "Runs containers",
+   "parents": [
+    "KubernetesResource"
+   ]
+  },
+  "KMSKey": {
+   "description": "Encryption key",
+   "parents": [
+    "AWSSecurity"
+   ]
+  },
+  "KernelLimit": {
+   "description": "A per-node kernel resource that silently caps throughput",
+   "parents": [
+    "NetworkConcept"
+   ]
+  },
+  "KubectlCommand": {
+   "description": "kubectl",
+   "parents": [
+    "Command"
+   ]
+  },
+  "KubernetesResource": {
+   "description": "An object in the Kubernetes API",
+   "parents": [
+    "Resource"
+   ]
+  },
+  "LambdaFunction": {
+   "description": "Serverless function",
+   "parents": [
+    "AWSCompute"
+   ]
+  },
+  "LaunchTemplate": {
+   "description": "Instance configuration used by an ASG",
+   "parents": [
+    "AWSCompute"
+   ]
+  },
+  "LimitRange": {
+   "description": "Default and maximum per-container resources",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "MTU": {
+   "description": "",
+   "parents": [
+    "KernelLimit"
+   ]
+  },
+  "Mechanism": {
+   "description": "An underlying failure mechanism shared by many surface causes",
+   "parents": [
+    "Diagnostic"
+   ]
+  },
+  "MutatingWebhookConfiguration": {
+   "description": "Rewrites objects on admission",
+   "parents": [
+    "K8sExtension"
+   ]
+  },
+  "NATGateway": {
+   "description": "Outbound-only internet access for private subnets",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "Namespace": {
+   "description": "A scope for names and quotas",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "NdotsFive": {
+   "description": "",
+   "parents": [
+    "DNSComponent"
+   ]
+  },
+  "NetworkConcept": {
+   "description": "A networking mechanism with no single API object",
+   "parents": [
+    "Concept"
+   ]
+  },
+  "NetworkLoadBalancer": {
+   "description": "Layer 4 load balancer",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "NetworkPolicy": {
+   "description": "Pod-level network firewall",
+   "parents": [
+    "K8sNetworking"
+   ]
+  },
+  "Node": {
+   "description": "A worker machine",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "NodeLocalDNSCache": {
+   "description": "",
+   "parents": [
+    "DNSComponent"
+   ]
+  },
+  "OIDCProvider": {
+   "description": "Federated identity provider, used by IRSA",
+   "parents": [
+    "AWSIdentity"
+   ]
+  },
+  "Operation": {
+   "description": "Something an operator or pipeline performs",
+   "parents": [
+    "Thing"
+   ]
+  },
+  "PersistentVolume": {
+   "description": "A piece of cluster storage",
+   "parents": [
+    "K8sStorage"
+   ]
+  },
+  "PersistentVolumeClaim": {
+   "description": "A workload request for storage",
+   "parents": [
+    "K8sStorage"
+   ]
+  },
+  "Pod": {
+   "description": "Smallest deployable unit: one or more containers sharing a network namespace",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "PodDisruptionBudget": {
+   "description": "Limits voluntary disruption",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "Practice": {
+   "description": "A recommended or mandated way of working",
+   "parents": [
+    "Thing"
+   ]
+  },
+  "Precondition": {
+   "description": "What must be true before a command is safe to run",
+   "parents": [
+    "Concept"
+   ]
+  },
+  "PrefixDelegation": {
+   "description": "",
+   "parents": [
+    "CNIPlugin"
+   ]
+  },
+  "PrivateLink": {
+   "description": "",
+   "parents": [
+    "Connectivity"
+   ]
+  },
+  "Provenance": {
+   "description": "Where a fact came from and when it was last checked",
+   "parents": [
+    "Concept"
+   ]
+  },
+  "RDSInstance": {
+   "description": "Managed relational database",
+   "parents": [
+    "AWSData"
+   ]
+  },
+  "ReliabilityPractice": {
+   "description": "Reduces the chance or impact of an outage",
+   "parents": [
+    "Practice"
+   ]
+  },
+  "Remediation": {
+   "description": "The action that resolves a root cause",
+   "parents": [
+    "Diagnostic"
+   ]
+  },
+  "ReplicaSet": {
+   "description": "Maintains a stable set of pod replicas",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "Resource": {
+   "description": "Anything that can be created, configured and destroyed",
+   "parents": [
+    "Thing"
+   ]
+  },
+  "ResourceKind": {
+   "description": "A catalog entry describing a kind of resource, not an instance",
+   "parents": [
+    "Concept"
+   ]
+  },
+  "ResourceQuota": {
+   "description": "Caps aggregate resource use in a namespace",
+   "parents": [
+    "K8sCluster"
+   ]
+  },
+  "Role": {
+   "description": "Namespaced permission set",
+   "parents": [
+    "K8sRBAC"
+   ]
+  },
+  "RoleBinding": {
+   "description": "Grants a Role to subjects in a namespace",
+   "parents": [
+    "K8sRBAC"
+   ]
+  },
+  "RootCause": {
+   "description": "The underlying reason",
+   "parents": [
+    "Diagnostic"
+   ]
+  },
+  "Route53HostedZone": {
+   "description": "DNS zone",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "RouteTable": {
+   "description": "Subnet routing rules",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "S3Bucket": {
+   "description": "Object storage",
+   "parents": [
+    "AWSStorage"
+   ]
+  },
+  "SNATPortExhaustion": {
+   "description": "",
+   "parents": [
+    "KernelLimit"
+   ]
+  },
+  "SecretsManagerSecret": {
+   "description": "Managed secret with rotation",
+   "parents": [
+    "AWSSecurity"
+   ]
+  },
+  "SecurityGroup": {
+   "description": "Stateful instance-level firewall",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "SecurityGroupsForPods": {
+   "description": "",
+   "parents": [
+    "CNIPlugin"
+   ]
+  },
+  "SecurityPractice": {
+   "description": "Reduces attack surface or blast radius",
+   "parents": [
+    "Practice"
+   ]
+  },
+  "Service": {
+   "description": "Stable virtual IP and DNS name in front of pods",
+   "parents": [
+    "K8sNetworking"
+   ]
+  },
+  "ServiceAccount": {
+   "description": "Pod identity inside the cluster",
+   "parents": [
+    "K8sRBAC"
+   ]
+  },
+  "StatefulSet": {
+   "description": "Ordered, stable identity workloads with per-pod storage",
+   "parents": [
+    "K8sWorkload"
+   ]
+  },
+  "StorageClass": {
+   "description": "Describes how volumes are dynamically provisioned",
+   "parents": [
+    "K8sStorage"
+   ]
+  },
+  "Subnet": {
+   "description": "An AZ-scoped range inside a VPC",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "TargetGroup": {
+   "description": "Load balancer backend set with health checks",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "TerraformBackend": {
+   "description": "Where state is stored and locked",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformCommand": {
+   "description": "terraform",
+   "parents": [
+    "Command"
+   ]
+  },
+  "TerraformDataSource": {
+   "description": "A read-only lookup block",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformModule": {
+   "description": "A reusable group of resources",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformObject": {
+   "description": "A construct in the Terraform language or runtime",
+   "parents": [
+    "IaCResource"
+   ]
+  },
+  "TerraformOutput": {
+   "description": "An exported value from a configuration",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformProvider": {
+   "description": "Plugin that talks to a target API",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformResource": {
+   "description": "A managed resource block",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformState": {
+   "description": "Mapping from configuration to real resource ids",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformVariable": {
+   "description": "An input to a configuration",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "TerraformWorkspace": {
+   "description": "A named state instance for one configuration",
+   "parents": [
+    "TerraformObject"
+   ]
+  },
+  "Thing": {
+   "description": "Root of the DevOps ontology",
+   "parents": []
+  },
+  "TransitGateway": {
+   "description": "",
+   "parents": [
+    "Connectivity"
+   ]
+  },
+  "VPC": {
+   "description": "Isolated virtual network",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "VPCCNI": {
+   "description": "",
+   "parents": [
+    "CNIPlugin"
+   ]
+  },
+  "VPCEndpoint": {
+   "description": "Private access to an AWS service without internet",
+   "parents": [
+    "AWSNetwork"
+   ]
+  },
+  "VPCPeering": {
+   "description": "",
+   "parents": [
+    "Connectivity"
+   ]
+  },
+  "ValidatingWebhookConfiguration": {
+   "description": "Rejects objects on admission",
+   "parents": [
+    "K8sExtension"
+   ]
+  },
+  "VersionGate": {
+   "description": "The version range over which a fact holds",
+   "parents": [
+    "Concept"
+   ]
+  }
+ },
+ "relations": [
+  {
+   "domain": "Command",
+   "name": "AFFECTS",
+   "range": "Resource"
+  },
+  {
+   "domain": "Thing",
+   "name": "ALTERNATIVE_TO",
+   "range": "Thing",
+   "symmetric": true
+  },
+  {
+   "domain": "Thing",
+   "name": "APPLIES_WHEN",
+   "range": "VersionGate"
+  },
+  {
+   "domain": "ServiceAccount",
+   "name": "ASSUMES_ROLE",
+   "range": "IAMRole"
+  },
+  {
+   "domain": "KubernetesResource",
+   "name": "BACKED_BY",
+   "range": "AWSResource"
+  },
+  {
+   "domain": "PersistentVolumeClaim",
+   "functional": true,
+   "name": "BOUND_TO",
+   "range": "PersistentVolume"
+  },
+  {
+   "domain": "Condition",
+   "name": "CAUSED_BY",
+   "range": "RootCause"
+  },
+  {
+   "domain": "TerraformResource",
+   "name": "DECLARES",
+   "range": "Resource"
+  },
+  {
+   "domain": "Thing",
+   "name": "DEPENDS_ON",
+   "range": "Thing",
+   "transitive": true
+  },
+  {
+   "domain": "Command",
+   "name": "DIAGNOSES",
+   "range": "Condition"
+  },
+  {
+   "domain": "Service",
+   "name": "EXPOSES",
+   "range": "K8sWorkload"
+  },
+  {
+   "domain": "Command",
+   "name": "GUARDED_BY",
+   "range": "Precondition"
+  },
+  {
+   "domain": "TerraformState",
+   "name": "LOCKED_BY",
+   "range": "Resource"
+  },
+  {
+   "domain": "Thing",
+   "name": "MANAGES",
+   "range": "Thing"
+  },
+  {
+   "domain": "Practice",
+   "name": "MITIGATES",
+   "range": "RootCause"
+  },
+  {
+   "domain": "Pod",
+   "name": "MOUNTS",
+   "range": "Resource"
+  },
+  {
+   "domain": "Command",
+   "name": "NEXT_STEP",
+   "range": "Command"
+  },
+  {
+   "domain": "Thing",
+   "name": "PART_OF",
+   "range": "Thing",
+   "transitive": true
+  },
+  {
+   "domain": "Pod",
+   "name": "PULLS_FROM",
+   "range": "ECRRepository"
+  },
+  {
+   "domain": "RootCause",
+   "name": "REMEDIATED_BY",
+   "range": "Remediation"
+  },
+  {
+   "domain": "Command",
+   "name": "REPLACED_BY",
+   "range": "Command"
+  },
+  {
+   "domain": "Thing",
+   "name": "REQUIRES",
+   "range": "Thing"
+  },
+  {
+   "domain": "Command",
+   "name": "REVEALS",
+   "range": "Evidence"
+  },
+  {
+   "domain": "Ingress",
+   "name": "ROUTES_TO",
+   "range": "Service"
+  },
+  {
+   "domain": "K8sWorkload",
+   "name": "RUNS_ON",
+   "range": "Node"
+  },
+  {
+   "domain": "Thing",
+   "name": "SELECTS",
+   "range": "Thing"
+  },
+  {
+   "domain": "TerraformState",
+   "name": "STORED_IN",
+   "range": "Resource"
+  },
+  {
+   "domain": "Command",
+   "name": "TARGETS",
+   "range": "Resource"
+  },
+  {
+   "domain": "IAMRole",
+   "name": "TRUSTS",
+   "range": "OIDCProvider"
+  },
+  {
+   "domain": "Command",
+   "name": "UNDONE_BY",
+   "range": "Command"
+  },
+  {
+   "domain": "Remediation",
+   "name": "USES_COMMAND",
+   "range": "Command"
+  }
+ ]
+}
