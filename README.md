@@ -1,4 +1,4 @@
-# graphapp
+# OpenRunbook
 
 A DevOps question-answering app over a graph database. Ask *"my pods keep
 restarting"* and get the triage commands in order, what to look for in each
